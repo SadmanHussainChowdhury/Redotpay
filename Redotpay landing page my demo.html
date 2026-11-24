@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedotPay | Digital Payments Made Simple</title>
+<meta name="description" content="Discover RedotPay. Explore digital payment features and get started through my referral link.">
+<meta name="theme-color" content="#0b1020">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #090e1c;
+    --card: #111a2e;
+    --primary: #7c5cff;
+    --secondary: #00d5c4;
+    --text: #f5f7ff;
+    --muted: #a5aec4;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+nav {
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-btn, .btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    display: inline-block;
+    transition: .25s;
+}
+
+.btn:hover, .nav-btn:hover {
+    transform: translateY(-2px);
+    background: #6845f5;
+}
+
+.hero {
+    padding: 90px 0 70px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 30px;
+    background: rgba(0,213,196,.1);
+    color: var(--secondary);
+    border: 1px solid rgba(0,213,196,.25);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #8d70ff, #00d5c4);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.btn-large {
+    padding: 16px 30px;
+    font-size: 16px;
+}
+
+.hero-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.visual {
+    min-height: 360px;
+    border-radius: 30px;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(124,92,255,.4), transparent 45%),
+      radial-gradient(circle at 30% 80%, rgba(0,213,196,.2), transparent 45%),
+      #111a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #27344c;
+}
+
+.card {
+    width: 270px;
+    height: 165px;
+    border-radius: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #7355ff, #24194f);
+    box-shadow: 0 25px 60px rgba(0,0,0,.4);
+    transform: rotate(-8deg);
+    position: relative;
+}
+
+.card::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,.12);
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.card-chip {
+    width: 38px;
+    height: 28px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #ffe8a3, #c89c43);
+    margin: 30px 0 15px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    opacity: .85;
+}
+
+.floating {
+    position: absolute;
+    background: #18243b;
+    padding: 14px 20px;
+    border: 1px solid #34415b;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.float1 {
+    top: 45px;
+    right: 25px;
+}
+
+.float2 {
+    bottom: 45px;
+    left: 25px;
+    color: var(--secondary);
+}
+
+section {
+    padding: 75px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature {
+    background: var(--card);
+    border: 1px solid #25314a;
+    padding: 28px;
+    border-radius: 20px;
+    transition: .2s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.step {
+    text-align: center;
+    padding: 25px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: rgba(124,92,255,.2);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 18px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.step p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.cta {
+    background: linear-gradient(135deg, #21174d, #11283a);
+    border: 1px solid #34345f;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 28px;
+}
+
+.cta h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.faq {
+    max-width: 750px;
+    margin: auto;
+}
+
+details {
+    background: var(--card);
+    border: 1px solid #25314a;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+summary {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+details p {
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+footer {
+    padding: 35px 0;
+    border-top: 1px solid #1d2940;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer a {
+    color: var(--secondary);
+}
+
+@media(max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 0;
+    }
+
+    .visual {
+        min-height: 300px;
+    }
+
+    .features, .steps {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    .section-heading h2,
+    .cta h2 {
+        font-size: 29px;
+    }
+}
+
+@media(max-width: 480px) {
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .card {
+        width: 230px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+    <nav>
+        <div class="logo">Redot<span>Pay</span></div>
+        <a href="https://url.hk/i/en/q3izw"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="nav-btn">Join Now ↗</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero container">
+    <div>
+        <span class="tag">DIGITAL PAYMENTS</span>
+
+        <h1>
+            Your digital payments.
+            <span class="gradient">Your way.</span>
+        </h1>
+
+        <p>
+            Discover RedotPay and explore a modern digital
+            payment experience. Get started using my referral
+            link and discover the available features.
+        </p>
+
+        <a href="https://url.hk/i/en/q3izw"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-large">
+           Get Started with RedotPay →
+        </a>
+
+        <div class="hero-note">
+            Join through my referral link. Terms and eligibility apply.
+        </div>
+    </div>
+
+    <div class="visual">
+        <div class="floating float1">🌐 Digital payments</div>
+
+        <div class="card">
+            <div class="card-title">RedotPay</div>
+            <div class="card-chip"></div>
+            <div class="card-bottom">
+                <span>Digital Payment</span>
+                <span>VISA / CARD*</span>
+            </div>
+        </div>
+
+        <div class="floating float2">✨ Modern financial tools</div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="section-heading">
+        <h2>Explore the possibilities</h2>
+        <p>Discover features available through the RedotPay platform.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <div class="icon">💳</div>
+            <h3>Payment Solutions</h3>
+            <p>Explore digital payment and card services available on the platform.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">📱</div>
+            <h3>Mobile Experience</h3>
+            <p>Discover payment features and account management through the app.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🌍</div>
+            <h3>Global Access</h3>
+            <p>Learn about supported services, locations and payment options.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="section-heading">
+        <h2>Get started in 3 steps</h2>
+        <p>A simple way to explore RedotPay.</p>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Visit the Link</h3>
+            <p>Click my referral link to visit RedotPay.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Create an Account</h3>
+            <p>Follow the official registration and verification instructions.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Explore RedotPay</h3>
+            <p>Review the services, fees and eligibility applicable to you.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="cta">
+        <h2>Ready to explore RedotPay?</h2>
+        <p>Start by visiting RedotPay through my referral link.</p>
+
+        <a href="https://url.hk/i/en/q3izw"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-large">
+           Join RedotPay Now ↗
+        </a>
+    </div>
+</section>
+
+<section class="container">
+    <div class="section-heading">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+        <details>
+            <summary>What is RedotPay?</summary>
+            <p>RedotPay is a digital payment platform. Visit its official website to learn about its products and services.</p>
+        </details>
+
+        <details>
+            <summary>How do I join?</summary>
+            <p>Click one of the Join RedotPay buttons on this page to access the referral link and follow the official signup process.</p>
+        </details>
+
+        <details>
+            <summary>Is registration available in my country?</summary>
+            <p>Availability, verification requirements and features may vary depending on your location. Check the official terms before registering.</p>
+        </details>
+
+        <details>
+            <summary>Are there referral rewards?</summary>
+            <p>Referral benefits, if available, are subject to RedotPay's current referral campaign terms and eligibility requirements.</p>
+        </details>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 RedotPay Referral Promotion</p>
+        <p style="margin-top:10px">
+            This page is independently created and is not an official RedotPay website.
+            Referral link:
+            <a href="https://url.hk/i/en/q3izw">Join here</a>
+        </p>
+        <p style="margin-top:8px">
+            Digital assets and financial services may involve risk.
+            Please review all official terms before using any service.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
